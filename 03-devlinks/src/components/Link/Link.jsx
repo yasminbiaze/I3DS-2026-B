@@ -1,6 +1,6 @@
 import React, { Children } from 'react'
 
-const Link = (url, children) => {
+const Link = ({url, children}) => {
   return (
     <li>
     <a href={url}>{children}</a>

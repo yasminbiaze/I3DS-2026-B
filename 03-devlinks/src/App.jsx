@@ -3,6 +3,7 @@ import './App.css'
 import Link from './components/Link/Link';
 import Perfil from './components/Perfil/Perfil';
 import SocialLink from './components/SocialLink/SocialLink';
+import Rodape from './components/Rodape/Rodape';
 
 
 function App() {
@@ -38,7 +39,8 @@ function App() {
       <SocialLink url={"https://youtube.com"} icon={"logo-youtube"} />
       <SocialLink url={"https://likdin.com"} icon={"logo-github"} />
      </div>
-     <div className='rodape'></div>
+    
+ <Rodape>YasBiaze</Rodape>
     </div>
   );
 }
