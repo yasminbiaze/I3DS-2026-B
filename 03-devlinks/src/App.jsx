@@ -6,6 +6,8 @@ import Rodape from "./components/Rodape/Rodape";
 import SocialLink from "./components/SocialLink/SocialLink";
 import Switch from "./components/Switch/Switch";
 
+import foto from "./assets/rapunzel.webp"
+
 function App() {
   const [isLight, setIsLight] = useState(true);
 
@@ -15,7 +17,7 @@ function App() {
 
   return (
     <div id="App" className={isLight ? "light" : ""}>
-      <Perfil fotoPerfil={"https://placehold.co/100"}>Yasmin De Biaze</Perfil>
+      <Perfil fotoPerfil={foto}>Yasmin De Biaze</Perfil>
 
       <Switch troca={troca} isLight={isLight} />
 
