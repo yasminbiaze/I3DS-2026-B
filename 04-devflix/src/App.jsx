@@ -19,7 +19,7 @@ const App = () => {
         <img src={lupa} alt="Botão de ação para pesquisa!" />
       </div>
 
-      <Rodape>Yasmin De Biaze</Rodape>
+      <Rodape link={"https://github.com/yasminbiaze"}>Yasmin De Biaze</Rodape>
     </div>
   );
 };
