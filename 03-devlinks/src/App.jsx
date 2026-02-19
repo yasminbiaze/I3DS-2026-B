@@ -1,41 +1,42 @@
-
-import './App.css'
-import Link from './components/Link/Link';
-import Perfil from './components/Perfil/Perfil';
-import SocialLink from './components/SocialLink/SocialLink';
-import Rodape from './components/Rodape/Rodape';
-
+import { useState } from "react";
+import "./App.css";
+import Link from "./components/Link/Link";
+import Perfil from "./components/Perfil/Perfil";
+import Rodape from "./components/Rodape/Rodape";
+import SocialLink from "./components/SocialLink/SocialLink";
+import Switch from "./components/Switch/Switch";
 
 function App() {
- 
+  const [isLight, setIsLight] = useState(true);
+
+  const troca = () => {
+    setIsLight(!isLight);
+  };
+
   return (
-    <div id='App'>
+    <div id="App" className={isLight ? "light" : ""}>
+      <Perfil fotoPerfil={"https://placehold.co/100"}>Yasmin De Biaze</Perfil>
 
-<Perfil fotoPerfil={"https://placehold.co/100"} > Yasmin De Biaze </Perfil>
+      <Switch troca={troca} isLight={isLight} />
 
-     <div className='switch'>
-      botão switch
+      <div id="Link">
+        <ul>
+          <Link url={""}>Inscreva-se</Link>
+          <Link url={""}>Minha playlist</Link>
+          <Link url={""}>Me pague um café!</Link>
+          <Link url={""}>Conheça o Curso DEV</Link>
+        </ul>
+      </div>
 
-<div>
-<ul>
-<Link url={""}>Inscreva-se</Link>
-<Link url={""}>Minha Playlist</Link>
-<Link url={""}>Me pague um café!</Link>
-<Link url={""}>Conheça o curso DEV</Link>
-</ul>
-</div>
-
-</div>
-     <div id='SocialLinks'>
-      <SocialLink url={"https://github.com"} icon={"logo-github"} />
-      <SocialLink url={"https://instagram.com"} icon={"logo-instagram"} />
-      <SocialLink url={"https://youtube.com"} icon={"logo-youtube"} />
-      <SocialLink url={"https://likdin.com"} icon={"logo-github"} />
-     </div>
-    
- <Rodape>YasBiaze</Rodape>
+      <div id="SocialLinks">
+        <SocialLink url={"https://github.com"} icon={"logo-github"} />
+        <SocialLink url={"https://instagram.com"} icon={"logo-instagram"} />
+        <SocialLink url={"https://youtube.com"} icon={"logo-youtube"} />
+        <SocialLink url={"https://br.linkedin.com/"} icon={"logo-linkedin"} />
+      </div>
+      <Rodape>Yasmin De Biaze</Rodape>
     </div>
   );
 }
 
-export default App
+export default App;

@@ -1,15 +1,15 @@
 import React from "react";
-import "./Switch.module.css"
+import styles from "./Switch.module.css";
 
-const Switch = ({troca, isLight}) => {
- return (
+const Switch = ({ troca, isLight }) => {
+  return (
     <div className={isLight ? styles.light : ""}>
-        <div id={styles.Switch}>
-            <button></button>
-            <span></span>
-            </div>
+      <div onClick={troca} id={styles.Switch}>
+        <button></button>
+        <span></span>
+      </div>
     </div>
- );   
+  );
 };
 
 export default Switch;
