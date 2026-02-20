@@ -5,8 +5,8 @@ footer {
   color: var(--text-primary);
 
   & a {
-    color: var(--accent-color);
     text-decoration: none;
+    color: var(--accent-color);
     font-weight: bold;
   }
 }
