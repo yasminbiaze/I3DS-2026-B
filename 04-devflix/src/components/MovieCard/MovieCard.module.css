@@ -10,9 +10,32 @@
 
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-& div:nth-of-type(1) {
+    /*Moficando primeiro elemento do div (imagem, ano)*/
+
+    & div:nth-of-type(1) {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    top: 0;
+    color: var(--text-secondary);
+    font-weight: bold;
+    text-align: center;
+    transition: opacity 0.3s ease;
     opacity: 0;
+    padding: 16px;
 }
+
+    /*Moficando segundo elemento do div*/
+& div:nth-of-type(2) {
+    height: 100%;
+    width: 100%;
+
+    & img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
 
     /*Passar o mouse por cima do bloco zero*/
     &:hover{
