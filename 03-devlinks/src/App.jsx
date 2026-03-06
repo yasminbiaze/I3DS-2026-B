@@ -6,7 +6,11 @@ import Rodape from "./components/Rodape/Rodape";
 import SocialLink from "./components/SocialLink/SocialLink";
 import Switch from "./components/Switch/Switch";
 
+<<<<<<< HEAD
 import foto from "./assets/yasfoto.jpg";
+=======
+import foto from "./assets/rapunzel.webp"
+>>>>>>> 4e356f030f26758953c129d8f30f521affa68e0d
 
 function App() {
   const [isLight, setIsLight] = useState(true);
@@ -36,7 +40,11 @@ function App() {
         <SocialLink url={"https://youtube.com"} icon={"logo-youtube"} />
         <SocialLink url={"https://br.linkedin.com/"} icon={"logo-linkedin"} />
       </div>
+<<<<<<< HEAD
       <Rodape>YasBiaze</Rodape>
+=======
+      <Rodape>Yasmin De Biaze</Rodape>
+>>>>>>> 4e356f030f26758953c129d8f30f521affa68e0d
     </div>
   );
 }
