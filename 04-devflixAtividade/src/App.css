@@ -1,151 +1,324 @@
 :root {
-  /* :root -> variáveis de css no tema original projetado */
   --font-raleway: "Raleway", sans-serif;
 
-  /* Light theme (padrão) */
-  --bg-primary: #f5f5f5;
-  --bg-secondary: #fff;
-  --text-primary: #333;
-  --text-secondary: #666;
-  --text-placeholder: #a1a1a1;
-  --accent-color: #ff6b6b;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-  --shadow: 0px 2px 8px var(--shadow-color);
-}
+  /* CORES YASFLIX */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark theme */
-    --bg-primary: #212426;
-    --bg-secondary: #343739;
-    --text-primary: #f5f5f5;
-    --text-secondary: #f0f0f0;
-    --text-placeholder: #a1a1a1;
-    --accent-color: #ffa500;
-    --shadow-color: rgba(0, 0, 0, 0.4);
-    --shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-  }
+  --bg-primary: linear-gradient(
+    135deg,
+    #0f051d,
+    #1c0f2e,
+    #2a1645,
+    #3a1f63
+  );
+
+  --bg-secondary: rgba(255,255,255,0.08);
+
+  --text-primary: #ffffff;
+  --text-secondary: #d8cfff;
+
+  --text-placeholder: #a89ed3;
+
+  --accent-color: #c084fc;
+
+  --accent-strong: #8b5cf6;
+
+  --shadow: 0px 10px 30px rgba(0,0,0,0.4);
 }
 
 body {
   font-family: var(--font-raleway);
+
   background: var(--bg-primary);
+
+  background-size: 400% 400%;
+
+  animation: gradientMove 15s ease infinite;
 
   color: var(--text-primary);
 
-  /* Efeito de transição */
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  min-height: 100vh;
+
+  transition: all 0.4s ease;
+}
+
+@keyframes gradientMove {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
 #App {
   padding: 4em;
+
   display: flex;
   flex-direction: column;
+
   justify-content: center;
   align-items: center;
 }
+
+/* LOGO */
 
 #Logo {
   max-width: 100%;
   overflow: hidden;
-
-  & img {
-    width: 70%;
-    height: auto;
-    display: block;
-    margin: auto;
-  }
 }
 
+#Logo img {
+  width: 70%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+/* SEARCH */
+
 .search {
+
   width: 70%;
   margin: 4rem 0 2rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem 1.75rem;
-  border-radius: 4rem;
-  background: var(--bg-secondary);
-  box-shadow: var(--shadow);
 
-  -webkit-box-shadow: var(--shadow);
+  padding: 1.4rem 1.7rem;
 
-  transition: all 0.3s ease;
+  border-radius: 50px;
 
-  & input {
-    flex: 1;
-    border: none;
-    outline: none;
-    padding-right: 1rem;
-    color: var(--text-primary);
-    background: var(--bg-secondary);
-    font-size: 1.5rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-  }
+  backdrop-filter: blur(12px);
 
-  & input::placeholder {
-    color: var(--text-placeholder);
-  }
+  background: rgba(255,255,255,0.08);
 
-  & img {
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-  }
+  border: 1px solid rgba(255,255,255,0.15);
+
+  box-shadow: 0 0 25px rgba(139,92,246,0.25);
+
+  transition: all 0.4s ease;
 }
+
+.search:hover{
+  box-shadow: 0 0 40px rgba(192,132,252,0.4);
+  transform: scale(1.02);
+}
+
+.search input {
+
+  flex: 1;
+
+  border: none;
+  outline: none;
+
+  padding-right: 1rem;
+
+  color: var(--text-primary);
+
+  background: transparent;
+
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.search input::placeholder {
+  color: var(--text-placeholder);
+}
+
+.search img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+
+  filter: brightness(2);
+}
+
+/* TEXTO SEM RESULTADO */
 
 .empty {
   width: 100%;
   margin-top: 2rem;
+
   text-align: center;
+
+  color: var(--accent-color);
+
+  font-weight: 600;
+}
+
+/* CONTAINER */
+
+.container {
+
+  width: 100%;
+  margin-top: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 15px;
+}
+
+/* CARD DO FILME */
+
+.movie {
+
+  width: 200px;
+
+  margin: 1.5rem;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  position: relative;
+
+  backdrop-filter: blur(10px);
+
+  background: rgba(255,255,255,0.05);
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  box-shadow: var(--shadow);
+
+  transition: all 0.35s ease;
+}
+
+.movie:hover{
+
+  transform: translateY(-8px) scale(1.05);
+
+  box-shadow:
+  0 15px 40px rgba(139,92,246,0.4);
+}
+
+/* POSTER */
+
+.movie img{
+
+  width: 100%;
+  height: 300px;
+
+  object-fit: cover;
+}
+
+/* INFORMAÇÕES */
+
+.movie div{
+
+  padding: 1rem;
+}
+
+/* ANO */
+
+.movie span{
+
+  font-size: 0.9rem;
+
+  color: var(--text-secondary);
+}
+
+/* TITULO */
+
+.movie h3{
+
+  margin-top: 6px;
+
+  font-size: 1rem;
 
   color: var(--accent-color);
 }
 
-.container {
-  width: 100%;
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 600px){
+
+  #App{
+    padding:4rem 2rem;
+  }
+
+  .search{
+    width:100%;
+  }
+
+  .search input{
+    font-size:1.1rem;
+  }
+
 }
 
-@media screen and (max-width: 600px) {
-  #App {
-    padding: 4rem 2rem;
+@media screen and (max-width: 400px){
+
+  #App{
+    padding:4rem 1rem;
   }
 
-  .search {
-    padding: 1rem 1.75rem;
-    width: 100%;
-
-    & input {
-      font-size: 1.1rem;
-    }
-
-    & img {
-      width: 20px;
-      height: 20px;
-    }
+  .movie{
+    width:100%;
+    margin:1rem;
   }
+
+}
+/* BOTÃO DE TEMA */
+.theme-button{
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+
+  background: linear-gradient(135deg,#c084fc,#7c3aed);
+  color: white;
+
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 400px) {
-  #App {
-    padding: 4rem 1rem;
-  }
-  h1 {
-    font-size: 2rem;
-  }
-  .container {
-    margin-top: 2rem;
-  }
-  .movie {
-    width: 100%;
-    margin: 1rem;
-  }
+.theme-button:hover{
+  transform: scale(1.1);
+}
+/* TEMA CLARO */
+body.light-theme{
+  --bg-primary:#f8f5ff;
+  --bg-secondary:#ffffff;
+  --text-primary:#2d1b4e;
+}
+
+/* TEMA ESCURO */
+body.dark-theme{
+  --bg-primary:#1a102b;
+  --bg-secondary:#2a1b4a;
+  --text-primary:#ffffff;
+}
+
+.language-button{
+  position: fixed;
+  top: 25px;
+  right: 90px;
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+  border: none;
+
+  font-size: 20px;
+  cursor: pointer;
+
+  background: linear-gradient(135deg,#a855f7,#6d28d9);
+  color: white;
+
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.language-button:hover{
+  transform: scale(1.1);
 }
