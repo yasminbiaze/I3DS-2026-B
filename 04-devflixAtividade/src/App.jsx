@@ -115,7 +115,7 @@ const App = () => {
           onChange={(e) => setSearch(e.target.value)}
           type="text"
           placeholder={
-            idioma === "./assets/bandeira-do-brasil-forma-redonda_445068-3081.avif"
+            idioma === "pt"
               ? "Pesquise por filmes"
               : idioma === "en"
               ? "Search for movies"
